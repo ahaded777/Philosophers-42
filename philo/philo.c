@@ -10,7 +10,10 @@ void *philosopher_routine(void *arg)
         pthread_mutex_lock(philo->left_fork);
         print_status(philo, "has taken a fork\n");
         if (philo->left_fork == philo->right_fork)
+        {
+            pthread_mutex_unlock(philo->left_fork);
             break ;
+        }
         pthread_mutex_lock(philo->right_fork);
         print_status(philo, "has taken a fork\n");
         philo->last_meal_time = get_current_time();
