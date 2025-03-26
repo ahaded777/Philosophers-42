@@ -14,7 +14,6 @@ typedef struct s_philo {
     int             id;
     size_t          last_meal_time;
     int             count_eat;
-    int             dead;
     pthread_mutex_t *left_fork;
     pthread_mutex_t *right_fork;
     t_data          *data;
